@@ -1,18 +1,344 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Project</title>
-</head>
+        <title>Skills Check 014 — Border Style</title>
 
-<body>
-    start
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <script src="./assets/js/main.js"></script>
-</body>
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
 
+        <link rel="stylesheet" href="./assets/css/style.css" />
+    </head>
+
+    <body>
+        <!-- =========================================
+            APP SHELL
+        ========================================== -->
+        <div class="app-shell">
+            <!-- =====================================
+                HEADER
+            ====================================== -->
+            <header class="topbar">
+                <a href="#" class="brand">
+                    <span class="brand-icon">B.</span>
+
+                    <span class="brand-name"> Border<span>Lab</span> </span>
+                </a>
+
+                <div class="topbar-meta">
+                    <span class="course-label">CSS COLLECTION</span>
+                    <span class="course-number">014</span>
+                </div>
+            </header>
+
+            <!-- =====================================
+                MAIN CONTENT
+            ====================================== -->
+            <main class="main-content">
+                <!-- =================================
+                    HERO
+                ================================== -->
+                <section class="hero">
+                    <div class="hero-content">
+                        <div class="eyebrow">
+                            <span class="eyebrow-dot"></span>
+                            SKILLS CHECK / 014
+                        </div>
+
+                        <h1>
+                            Border
+                            <span class="hero-accent">style</span>
+                            collection.
+                        </h1>
+
+                        <p class="hero-description">
+                            Four styles. Infinite ways to define an edge. Show
+                            what you know about CSS borders.
+                        </p>
+
+                        <div class="hero-tags">
+                            <span>CSS</span>
+                            <span>20 QUESTIONS</span>
+                            <span>BEGINNER</span>
+                        </div>
+                    </div>
+
+                    <!-- Decorative Border Artwork -->
+                    <div class="hero-art" aria-hidden="true">
+                        <div class="art-card art-card-solid">
+                            <span>01</span>
+                            <div class="art-line solid-line"></div>
+                            <small>SOLID</small>
+                        </div>
+
+                        <div class="art-card art-card-dashed">
+                            <span>02</span>
+                            <div class="art-line dashed-line"></div>
+                            <small>DASHED</small>
+                        </div>
+
+                        <div class="art-card art-card-dotted">
+                            <span>03</span>
+                            <div class="art-line dotted-line"></div>
+                            <small>DOTTED</small>
+                        </div>
+
+                        <div class="art-card art-card-double">
+                            <span>04</span>
+                            <div class="art-line double-line"></div>
+                            <small>DOUBLE</small>
+                        </div>
+
+                        <div class="art-sticker">CSS<br />EDITION</div>
+                    </div>
+                </section>
+
+                <!-- =================================
+                    QUIZ INTRO / STATS
+                ================================== -->
+                <section class="quiz-overview">
+                    <div class="overview-card overview-total">
+                        <span class="overview-label">TOTAL QUESTIONS</span>
+                        <strong>20</strong>
+                        <span class="overview-caption"
+                            >Test your knowledge</span
+                        >
+                    </div>
+
+                    <div class="overview-card overview-topic">
+                        <span class="overview-label">TOPIC</span>
+                        <strong>Border</strong>
+                        <span class="overview-caption">CSS appearance</span>
+                    </div>
+
+                    <div class="overview-card overview-level">
+                        <span class="overview-label">LEVEL</span>
+                        <strong>Easy → Medium</strong>
+                        <span class="overview-caption">Learn as you play</span>
+                    </div>
+                </section>
+
+                <!-- =================================
+                    QUIZ AREA
+                ================================== -->
+                <section class="quiz-section" id="quiz-section">
+                    <!-- Quiz Header -->
+                    <div class="quiz-header">
+                        <div class="quiz-header-left">
+                            <span class="quiz-label">KNOWLEDGE CHECK</span>
+
+                            <h2>Let's test your skills.</h2>
+                        </div>
+
+                        <div class="question-counter">
+                            <span id="current-question">01</span>
+                            <span class="counter-divider">/</span>
+                            <span id="total-questions">20</span>
+                        </div>
+                    </div>
+
+                    <!-- Progress -->
+                    <div class="progress-track">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+
+                    <!-- Question Card -->
+                    <div class="question-card" id="question-card">
+                        <div class="question-topline">
+                            <span
+                                class="question-category"
+                                id="question-category"
+                            >
+                                BORDER BASICS
+                            </span>
+
+                            <span class="question-points"> +1 POINT </span>
+                        </div>
+
+                        <h3 class="question-title" id="question-text">
+                            Loading question...
+                        </h3>
+
+                        <!-- Code Snippet -->
+                        <div class="question-code" id="question-code-wrap">
+                            <div class="code-header">
+                                <div class="code-dots">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+
+                                <span>style.css</span>
+                            </div>
+
+                            <pre><code id="question-code"></code></pre>
+                        </div>
+
+                        <!-- Answers -->
+                        <div class="answers-grid" id="answers-grid"></div>
+
+                        <!-- Explanation -->
+                        <div class="feedback-box hidden" id="feedback-box">
+                            <div class="feedback-icon" id="feedback-icon">
+                                ✓
+                            </div>
+
+                            <div class="feedback-content">
+                                <strong id="feedback-title"> Correct! </strong>
+
+                                <p id="feedback-text"></p>
+                            </div>
+
+                            <div class="feedback-points" id="feedback-points">
+                                +1
+                            </div>
+                        </div>
+
+                        <!-- Footer -->
+                        <div class="question-footer">
+                            <div class="question-hint-wrap">
+                                <span class="question-hint" id="question-hint">
+                                    Select the best answer
+                                </span>
+
+                                <div class="keyboard-hint">
+                                    <kbd>1</kbd>
+                                    <kbd>2</kbd>
+                                    <kbd>3</kbd>
+                                    <kbd>4</kbd>
+                                    <span>to answer</span>
+                                </div>
+                            </div>
+
+                            <button
+                                class="next-button"
+                                id="next-button"
+                                disabled
+                            >
+                                <span>Next question</span>
+                                <span class="button-arrow">→</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- =================================
+                 RESULT SCREEN
+            ================================== -->
+                <section class="results-section hidden" id="results-section">
+                    <div class="results-card">
+                        <div class="results-decoration">
+                            <span class="result-circle circle-one"></span>
+                            <span class="result-circle circle-two"></span>
+                            <span class="result-circle circle-three"></span>
+                        </div>
+
+                        <div class="results-eyebrow">
+                            SKILLS CHECK COMPLETED
+                        </div>
+
+                        <h2 id="result-heading">Nice work!</h2>
+
+                        <div class="score-circle" id="score-circle">
+                            <div class="score-inner">
+                                <strong id="score-percentage">0%</strong>
+                                <span>YOUR SCORE</span>
+                            </div>
+                        </div>
+
+                        <div class="results-summary">
+                            <div class="result-stat">
+                                <strong id="correct-count">0</strong>
+                                <span>Correct</span>
+                            </div>
+
+                            <div class="result-stat">
+                                <strong id="incorrect-count">0</strong>
+                                <span>Incorrect</span>
+                            </div>
+
+                            <div class="result-stat">
+                                <strong id="result-total">20</strong>
+                                <span>Total</span>
+                            </div>
+                        </div>
+
+                        <p class="result-message" id="result-message">
+                            Keep learning and improving!
+                        </p>
+
+                        <!-- Answer review -->
+                        <section
+                            class="answer-review"
+                            aria-labelledby="review-title"
+                        >
+                            <div class="review-heading">
+                                <div>
+                                    <span class="review-eyebrow"
+                                        >LEARNING SUMMARY</span
+                                    >
+                                    <h3 id="review-title">
+                                        Review your answers
+                                    </h3>
+                                </div>
+
+                                <span class="review-count" id="review-count"
+                                    >20 questions</span
+                                >
+                            </div>
+
+                            <div class="review-list" id="review-list"></div>
+                        </section>
+
+                        <button class="restart-button" id="restart-button">
+                            <span>Try again</span>
+                            <span>↻</span>
+                        </button>
+                    </div>
+                </section>
+
+                <!-- =================================
+                 BOTTOM INFO
+            ================================== -->
+                <section class="bottom-note">
+                    <div class="note-icon">✳</div>
+
+                    <div>
+                        <strong>Learning never stops.</strong>
+
+                        <p>
+                            Every question includes an explanation. Mistakes are
+                            part of mastering CSS.
+                        </p>
+                    </div>
+                </section>
+            </main>
+
+            <!-- =====================================
+             FOOTER
+        ====================================== -->
+            <footer class="footer">
+                <div class="footer-brand">
+                    <span class="brand-icon">B.</span>
+                    <span>BorderLab</span>
+                </div>
+
+                <p>Learning CSS, one detail at a time.</p>
+
+                <span class="footer-edition"> SKILLS CHECK 014 </span>
+            </footer>
+        </div>
+
+        <!-- =========================================
+            JAVASCRIPT
+        ========================================== -->
+        <script src="./assets/js/main.js"></script>
+    </body>
 </html>
